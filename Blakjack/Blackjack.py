@@ -103,8 +103,8 @@ if play is True:
 
 if play is True:
     if dealer_sum > player_sum:
-        print("Dealer wins! (Higher Total)")
+        print("Dealer wins! The dealer had " + str(dealer_sum) + " you had " + str(player_sum))
     elif dealer_sum == player_sum:
         print("Push!")
     else:
-        print("You win! (Higher Total)")
+        print("You win! The dealer had " + str(dealer_sum) + " you had " + str(player_sum))
