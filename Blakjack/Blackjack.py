@@ -29,23 +29,22 @@ card_count = num_cards - 1
 cash = 100
 
 # Initializes the dealers hand and returns the dealers first card
-dealer1 = play_deck[random.randint(0, card_count)]
-dealer2 = play_deck[random.randint(0, card_count)]
+dealer1 = draw_card()
+dealer2 = draw_card()
 dealer_value1 = (get_value(dealer1))
 dealer_value2 = (get_value(dealer2))
 dealer_sum = (dealer_value1 + dealer_value2)
 dealer_hand = [dealer_value1, dealer_value2]
-print(dealer1 + " " + dealer2)
+print(dealer1)
 
 # Initializes the players hand and returns the players hand along with the numerical value
-player1 = play_deck[random.randint(0, card_count)]
-player2 = play_deck[random.randint(0, card_count)]
+player1 = draw_card()
+player2 = draw_card()
 player_value1 = (get_value(player1))
 player_value2 = (get_value(player2))
 player_sum2 = (player_value1 + player_value2)
 player_hand = [player_value1, player_value2]
 print(player1 + " " + player2 + "     " + str(player_sum2))
-
 
 dealer_blackjack = False
 player_blackjack = False
@@ -53,9 +52,11 @@ player_blackjack = False
 # This section checks if either player was dealt blackjack, no current functionality for insurance
 if dealer1 == "A" and dealer2 in ten_cards or (dealer2 == "A" and dealer1 in ten_cards):
     dealer_blackjack = True
+    play = False
 
 if player1 == "A" and player2 in ten_cards or player2 == "A" and player1 in ten_cards:
     player_blackjack = True
+    play = False
 
 if dealer_blackjack:
     if player_blackjack:
